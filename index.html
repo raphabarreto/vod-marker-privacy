@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Política de Privacidade — VOD Marker (Beta)</title>
+<style>body{font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;max-width:780px;margin:40px auto;padding:0 20px;color:#1c1d26}
+h1{font-size:1.6rem}h2{font-size:1.2rem;margin-top:2rem}code{background:#eef;padding:1px 5px;border-radius:4px}hr{margin:2.5rem 0;border:0;border-top:1px solid #ccd}
+@media(prefers-color-scheme:dark){body{background:#0e0f13;color:#e8e9f0}code{background:#23263a}hr{border-color:#2a2d3d}}</style></head>
+<body>
+<h1>Política de Privacidade — VOD Marker (Beta)</h1>
+<p>Última atualização: 17 de novembro de 2026</p>
+<p>O <strong>VOD Marker</strong> é uma extensão do Chrome independente e <strong>não oficial</strong>. Ela não é afiliada, endossada, patrocinada ou mantida pela Kick. "Kick" é marca de seus respectivos titulares e é citada apenas para indicar com qual site a extensão funciona.</p>
+<p>Esta política descreve, de forma literal, o que a extensão faz com informações. O resumo: <strong>seus marcadores ficam somente no seu navegador; o desenvolvedor não recebe nenhum dado seu</strong>.</p>
+<h2>1. O que a extensão guarda (e onde)</h2>
+<p>Tudo é gravado <strong>localmente</strong>, no armazenamento da extensão do seu navegador (<code>chrome.storage.local</code>). Não usamos sincronização do Chrome, contas, servidor próprio, banco de dados externo nem armazenamento em nuvem.</p>
+<p>Os dados guardados são:</p>
+<ul>
+<li><strong>Marcadores que você cria</strong>: instante marcado (horário no VOD ou na live), link para aquele momento, descrição e etiquetas que você digitar, indicação de favorito e a data/hora em que marcou.</li>
+<li><strong>VODs e lives onde você marcou</strong>: canal, título e endereço (URL) da página, e o endereço da imagem de miniatura publicada pela página.</li>
+<li><strong>Suas configurações</strong>: atalho de teclado e se a confirmação na tela está ligada.</li>
+</ul>
+<p>Esses dados permanecem no seu computador até você apagá-los (botões "Limpar momentos", "Excluir", ou desinstalando a extensão).</p>
+<h2>2. O que a extensão lê na página da Kick</h2>
+<p>A extensão só atua em páginas <code>https://kick.com/*</code>. Quando você abre um VOD ou uma live, ela lê, <strong>apenas no seu navegador</strong>:</p>
+<ul>
+<li>o endereço da página (canal e identificador do vídeo);</li>
+<li>o título e a miniatura divulgados pela página (metadados <code>og:</code>);</li>
+<li>a posição atual do player e, em lives, o contador de tempo exibido pelo player ("HH:MM:SS • LIVE");</li>
+<li>os <strong>nomes (URLs) das requisições que a própria página já fez</strong>, para descobrir o identificador público do VOD da live em andamento.</li>
+</ul>
+<p>A extensão <strong>não lê o chat, não lê sua conta, e-mail, senha, cookies ou dados de pagamento</strong>, e não altera sua conta na Kick.</p>
+<h2>3. Quais requisições a extensão faz</h2>
+<p>A extensão <strong>não envia dados para o desenvolvedor nem para terceiros</strong>. O único tráfego de rede que ela provoca é com a própria Kick:</p>
+<ul>
+<li><strong>Lista de VODs do canal.</strong> Para vincular uma live ao seu VOD, a extensão baixa a página pública <code>https://kick.com/&lt;canal&gt;/videos</code> (a mesma que você veria ao abrir "Vídeos" do canal) e extrai dela os identificadores públicos dos VODs. Quando isso é feito pela página da Kick aberta, o navegador envia a requisição como em qualquer carregamento daquele site (incluindo cookies que o próprio navegador já tem para kick.com — a extensão não os lê nem guarda). Quando é feito pela biblioteca da extensão, a requisição é enviada sem cookies. O conteúdo baixado é analisado localmente e descartado; <strong>nenhum marcador, descrição ou dado seu é enviado nessa requisição</strong>.</li>
+<li><strong>Miniaturas.</strong> Ao mostrar a biblioteca ou o popup, o navegador carrega a miniatura a partir do endereço guardado (servidores de imagem da Kick), como faria ao exibir qualquer imagem.</li>
+</ul>
+<p>Essas consultas dependem de páginas públicas da Kick que <strong>não são uma API oficial/documentada</strong> e podem mudar. Se mudarem, o vínculo automático deixa de funcionar e a extensão continua permitindo marcar e vincular manualmente.</p>
+<p>Não há análise de uso (analytics), anúncios, rastreadores, relatórios de erro automáticos, código remoto, nem venda ou compartilhamento de dados.</p>
+<h2>4. Backup e área de transferência</h2>
+<ul>
+<li><strong>Exportar backup</strong> gera um arquivo JSON no seu computador, quando você clica. <strong>Importar backup</strong> lê um arquivo que você escolher. Nada é enviado pela internet.</li>
+<li><strong>Copiar link / Copiar momentos</strong> escreve texto na sua área de transferência somente quando você clica no botão.</li>
+</ul>
+<h2>5. Permissões</h2>
+<ul>
+<li><code>storage</code>: guardar localmente seus marcadores e configurações.</li>
+<li>Acesso a <code>https://kick.com/*</code>: ler a posição do player, ouvir o atalho de teclado e exibir a confirmação nessas páginas, e consultar a lista pública de VODs do canal.</li>
+</ul>
+<p>A extensão não usa <code>tabs</code>, <code>history</code>, <code>cookies</code>, <code>&lt;all_urls&gt;</code> nem acesso a outros sites.</p>
+<h2>6. Compartilhamento e venda de dados</h2>
+<p>O desenvolvedor <strong>não coleta, não vende, não aluga e não compartilha</strong> dados pessoais ou o conteúdo dos seus marcadores. Como não há servidor, também não há como acessar seus dados remotamente.</p>
+<h2>7. Crianças</h2>
+<p>A extensão não é direcionada a crianças e não coleta dados pessoais de ninguém.</p>
+<h2>8. Seus controles</h2>
+<p>Você pode a qualquer momento: editar ou excluir marcadores, usar "Limpar momentos" (com desfazer por alguns segundos), exportar seus dados, remover a extensão (o que apaga os dados locais dela) ou limpar os dados do site da extensão pelas configurações do Chrome.</p>
+<h2>9. Mudanças nesta política</h2>
+<p>Se o funcionamento mudar de forma que afete a privacidade, esta política será atualizada <strong>antes</strong> da publicação da nova versão, com a data acima revisada.</p>
+<h2>10. Contato</h2>
+<p>Dúvidas ou solicitações: <strong>gamingraphaguiba@gmail.com</strong></p>
+<hr>
+<h1>Privacy Policy — VOD Marker (Beta) — English summary</h1>
+<p><em>Last updated: November 17, 2026.</em> VOD Marker is an independent, unofficial extension, not affiliated with, endorsed by or sponsored by Kick.</p>
+<ul>
+<li><strong>Local only.</strong> Your markers (time, link, note, tags, favorite flag), the VODs/lives you marked (channel, title, URL, thumbnail URL) and your settings are stored in <code>chrome.storage.local</code> in your browser. No sync, accounts or developer servers.</li>
+<li><strong>What it reads on kick.com pages:</strong> page URL, title/thumbnail metadata, the video player position, the player's live elapsed counter, and the names of requests the page itself already made (to find the public ID of the current broadcast). It does not read chat, account data, passwords, cookies or payment data.</li>
+<li><strong>Network:</strong> the extension only talks to Kick: it downloads the public page <code>https://kick.com/&lt;channel&gt;/videos</code> to find public VOD IDs (parsed locally, then discarded; none of your data is sent), and your browser loads thumbnails from Kick's image servers. This relies on public pages, not an official API, and may change.</li>
+<li><strong>No third parties:</strong> no analytics, ads, trackers, remote code, or data sale/sharing. The developer receives no data.</li>
+<li><strong>Your control:</strong> edit/delete markers, "Clear moments" (with undo), JSON export/import (local files only), or uninstall to remove local data.</li>
+<li><strong>Contact:</strong> gamingraphaguiba@gmail.com</li>
+</ul>
+</body></html>
